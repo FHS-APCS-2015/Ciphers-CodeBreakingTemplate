@@ -7,7 +7,7 @@ import java.util.Set;
 
 public class Bag {
 	private HashMap<String, Item> words;
-	private List<Item> sortedWords;
+	private ArrayList<Item> sortedWords;
 	private int totalWords = 0;
 	private boolean sorted = false;
 	
@@ -27,16 +27,16 @@ public class Bag {
 		sorted = false;
 	}
 	
-	public List<Item> getNMostFrequent(int n) {
+	public ArrayList<Item> getNMostFrequent(int n) {
 		if (!sorted) {
 			this.sortedWords = new ArrayList(words.values());
 			Collections.sort(sortedWords);
 			sorted = true;
 		}
-		return sortedWords.subList(0, n);
+		return new ArrayList(sortedWords.subList(0, n));
 	}
 	
-	public List<String> getNMostFrequentStrings(int n) {
+	public ArrayList<String> getNMostFrequentStrings(int n) {
 		if (!sorted) {
 			this.sortedWords = new ArrayList(words.values());
 			Collections.sort(sortedWords);
@@ -51,7 +51,7 @@ public class Bag {
 	}
 	
 
-	public List<String> getSortedList() {
+	public ArrayList<String> getSortedList() {
 		return getNMostFrequentStrings(getNumUniqueWords());
 	}
 	

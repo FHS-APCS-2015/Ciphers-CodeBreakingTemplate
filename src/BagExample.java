@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class BagExample {
 	/* This class demonstrates how to use the Bag data structure. */
 
@@ -21,9 +23,23 @@ public class BagExample {
 		System.out.println("Total items: " + bag.getTotalWords());
 		System.out.println("Total unique items: " + bag.getNumUniqueWords());
 		System.out.println("'a' occured: " + bag.getNumOccurances("a") + " times ");
-		System.out.println("Top 2 most frequent items: " + bag.getNMostFrequent(2));
-		double freq = (double)bag.getNumOccurances("a") / bag.getTotalWords();
-		System.out.println("Frequency of 'a' in data set is: " + freq);
+		
+		// You can also get a list of the top n most common items
+		ArrayList<String> commonLetters = bag.getNMostFrequentStrings(2);
+		for (String letter : commonLetters) {
+			System.out.print("Letter: " + letter);
+			double percent = (double)bag.getNumOccurances(letter) / bag.getTotalWords();
+			System.out.println(" " + percent);
+		}
+		
+		// You can do the same thing by getting a list of Bag.Item
+		// This is a class that stores a String for the word and an int for its frequency
+		// all in the same obect.
+		ArrayList<Bag.Item> commonItems = bag.getNMostFrequent(2);
+		for (Bag.Item item : commonItems) {
+			System.out.println(item.word + " : ");
+			System.out.println(item.freq);
+		}
 
 	}
 }
