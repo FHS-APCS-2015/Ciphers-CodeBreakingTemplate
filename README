@@ -1,0 +1,6 @@
+ciphertext 1 was encoded with a rotation cipher
+ciphertext 2 was encoded with a 2 letter Vigenere cipher
+ciphertext 3 was encoded with a 3 letter Vigenere cipher
+ciphertext 4 was encoded with a 5 letter Vigenere cipher
+ciphertext 5 was encoded with a password 8 characters or less
+ciphtertext 6 was encoded with a password, you don't know the length at all.
