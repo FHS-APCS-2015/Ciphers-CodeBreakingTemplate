@@ -14,6 +14,9 @@ public class Cipher {
 	// password.
 	// return the correct password or null if it can’t be cracked.
 	public static String freqAnalysisCrackVigenereLength2(String ciphertext) {
+
+		/* I have added these comments for you to pull! */
+		
 		return null;
 	}
 
